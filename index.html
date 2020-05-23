@@ -28,18 +28,19 @@
 </body>
 <script>
     var login = document.querySelector("#login");
-    login.onmouseover = function(){showTip()};
-    login.onmouseleave = function(){hideTip()};
-    login.onclick  = function(){hideTip()};
+    login.onmouseover = function () { showTip() };
+    login.onmouseleave = function () { hideTip() };
+    login.onclick = function () { hideTip() };
 
-    function showTip(){
+    function showTip() {
         if (login.value == "") {
-        document.querySelector(".PMFTip").style.display = "inline-block";
-        } 
+            document.querySelector(".PMFTip").style.display = "inline-block";
+        }
     }
-    function hideTip(){
+    function hideTip() {
         document.querySelector(".PMFTip").style.display = "none";
     }
 
 </script>
+
 </html>

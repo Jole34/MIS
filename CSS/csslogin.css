@@ -282,12 +282,13 @@ input[type=text]:placeholder {
 }
 
 /* PMF  */
-#img1{
+
+#img1 {
     position: absolute;
     width: 17vh;
 }
 
-.PMFTip{
+.PMFTip {
     background-color: springgreen;
     border-radius: 4%;
     margin-left: 5vh;
@@ -295,7 +296,4 @@ input[type=text]:placeholder {
     padding-left: 5%;
     padding-right: 5%;
     display: none;
-    
 }
-
-
