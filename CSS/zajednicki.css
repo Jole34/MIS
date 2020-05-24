@@ -12,6 +12,7 @@ html{
     background-color: steelblue;
     overflow-x: hidden;
     padding-top: 16px;
+    display: block;
   }
 
   .sidebar a {
@@ -54,3 +55,5 @@ html{
     width: 100%;
     background-color: lightblue;
   }
+
+  
