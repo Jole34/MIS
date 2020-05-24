@@ -13,22 +13,23 @@ html{
     overflow-x: hidden;
     padding-top: 16px;
   }
-  
+
   .sidebar a {
     padding: 6px 8px 6px 16px;
     color: ghostwhite;
     text-decoration: none;
     font-size: 20px;
     display: block;
-    border-bottom: turquoise solid 0.7vh;
-    transition: border-bottom 0.3s;
+    border-bottom: #56baed solid 0.7vh;
+    transition: background-color 1s;
+    margin-bottom: 1.5vh;
   }
   
   .sidebar a:hover {
-    color: turquoise;
-    border-bottom: transparent;
-    transition: border-bottom 0.3s;
+    color: #56baed;
+    background-color: white;
     transition: color 1s;
+    transition: background-color 1s;
   
   }
   
@@ -37,7 +38,7 @@ html{
     padding: 0px 10px;
   }
   .sidebar img{
-      width: 20%;
+      width: 13%;
   }
   
   @media screen and (max-height: 450px) {
@@ -49,7 +50,7 @@ html{
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 4%;
+    height: 3%;
     width: 100%;
     background-color: lightblue;
   }
