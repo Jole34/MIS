@@ -51,9 +51,10 @@ html{
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 3%;
+    height: 4%;
     width: 100%;
-    background-color: lightblue;
+    background-color: black;
+    opacity: .7;
   }
 
   
