@@ -286,13 +286,3 @@ input[type=text]:placeholder {
     position: absolute;
     width: 17vh;
 }
-
-.PMFTip {
-    background-color: springgreen;
-    border-radius: 4%;
-    margin-left: 5vh;
-    margin-right: 5vh;
-    padding-left: 5%;
-    padding-right: 5%;
-    display: none;
-}

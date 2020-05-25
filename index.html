@@ -15,7 +15,6 @@
 
             <form>
                 <input type="text" id="login" class="fadeIn second" name="login" placeholder="Корисничко име">
-                <div class="PMFTip"> Корисничко име мора бити дуже од 4 карактера</div>
                 <input type="text" id="password" class="fadeIn third" name="login" placeholder="Лозинка">
                 <input type="submit" class="fadeIn fourth" value="Улогуј се">
             </form>
@@ -26,21 +25,4 @@
         </div>
     </div>
 </body>
-<script>
-    var login = document.querySelector("#login");
-    login.onmouseover = function () { showTip() };
-    login.onmouseleave = function () { hideTip() };
-    login.onclick = function () { hideTip() };
-
-    function showTip() {
-        if (login.value == "") {
-            document.querySelector(".PMFTip").style.display = "inline-block";
-        }
-    }
-    function hideTip() {
-        document.querySelector(".PMFTip").style.display = "none";
-    }
-
-</script>
-
 </html>
