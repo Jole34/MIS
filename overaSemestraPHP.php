@@ -1,6 +1,3 @@
 <?php
-header('Location: ../Frontend/overaSemestra.html');
-
-
-
+header('Location: overaSemestra.html');
 ?>
