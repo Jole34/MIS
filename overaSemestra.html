@@ -18,48 +18,44 @@
         <a href="#Random"><img src="Images/icon1.png"> Random</a>
         <a href="#Random"><img src="Images/icon1.png"> Random</a>
     </div>
-    <div id="overaSemestra-odabirIspita">
-        <form>
+    <div class="overaSemestra-odabirIspita">
+        <form action="../Backend/overaSemestraPHP.php" method="post">
             <label class="container">One
-                <input type="checkbox" checked="checked">
+                <input type="checkbox" name="odabir[]" value="one" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <label class="container">Two
-                <input type="checkbox">
+                <input type="checkbox"  value="two"  name="odabir[]">
                 <span class="checkmark"></span>
             </label>
             <label class="container">Three
-                <input type="checkbox">
+                <input type="checkbox"value="three"   name="odabir[]">
                 <span class="checkmark"></span>
             </label>
             <label class="container">Four
-                <input type="checkbox">
+                <input type="checkbox"  value="four" name="odabir[]">
                 <span class="checkmark"></span>
             </label>
-        </form>
     </div>
-    <div id="overaSemestra-odabirIspita">
-        <form>
+    <div class="overaSemestra-odabirIspita">
             <label class="container">One
-                <input type="checkbox" checked="checked">
+                <input type="checkbox" checked="checked" name="odabir[]">
                 <span class="checkmark"></span>
             </label>
             <label class="container">Two
-                <input type="checkbox">
+                <input type="checkbox" name="odabir[]">
                 <span class="checkmark"></span>
             </label>
             <label class="container">Three
-                <input type="checkbox">
+                <input type="checkbox" checked="checked" >
                 <span class="checkmark"></span>
             </label>
             <label class="container">Four
                 <input type="checkbox">
                 <span class="checkmark"></span>
             </label>
-        </form>
     </div>
-    <div id="overaSemestra-odabirIspita">
-        <form>
+    <div class="overaSemestra-odabirIspita">
             <label class="container">One
                 <input type="checkbox" checked="checked">
                 <span class="checkmark"></span>
@@ -76,6 +72,7 @@
                 <input type="checkbox">
                 <span class="checkmark"></span>
             </label>
+            <input type="submit" name="potvrda" value="Potvrdi">
         </form>
     </div>
     <div class="footer">

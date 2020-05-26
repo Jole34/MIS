@@ -76,10 +76,11 @@
     transform: rotate(45deg);
 }
 
-#overaSemestra-odabirIspita {
+.overaSemestra-odabirIspita {
     font-weight: bolder;
     color:rgb(3, 54, 97);
     background-color: lightskyblue;
     border-radius: 5px;
     margin-left: 170px;
+    /*display: none;*/
 }
