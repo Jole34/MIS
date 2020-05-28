@@ -7,7 +7,7 @@
     <title>Overa Semestra</title>
 </head>
 
-<body>
+<body onload="checkDate()">
 
     <div class="sidebar">
         <a href="#Random"><img src="Images/icon1.png"> Random </a>
@@ -81,5 +81,25 @@
         <p></p>
     </div>
 </body>
+<script>
+    var date = new Date();
+    var divs = document.querySelectorAll(".overaSemestra-odabirIspita");
+    var divs1 = document.querySelector(".overaSemestra-odabirIspita1");
+
+
+    var dateC = date.getDate();
+    var month = date.getMonth() + 1;
+
+
+    function checkDate() {
+        if ((month == 6 || month == 1) && (dateC >= 1 && dateC <= 28)) {
+            for (i = 0; i <divs.length; i++){
+                divs[i].style.display = "block";
+            }
+            divs1.style.display = "block";
+        }
+    }
+
+</script>
 
 </html>
