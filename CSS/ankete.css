@@ -23,12 +23,3 @@
     width: 11vh;
 }
 
-.anketa-link img:hover{
-    transform: rotate(45deg);
-    transition: 1s;
-}
-
-#anketa-linkfirstInRow img:hover {
-    transform: rotate(45deg);
-    transition: 1s;
-}

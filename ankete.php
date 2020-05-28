@@ -20,7 +20,7 @@
     </div>
     <div id="anketa-linkfirstInRow">
         <center>
-            <img src="Images/ankete.png" />
+            <img id="ankete-specImage" src="Images/ankete.png" />
         </center>
     </div>
     <?php
@@ -29,7 +29,7 @@
     ?>
         <div class="anketa-link">
             <center>
-                <img src="Images/ankete.png" />
+                <img class="ankete-images" src="Images/ankete.png" />
             </center>
         </div>
     <?php
@@ -39,5 +39,53 @@
         <p></p>
     </div>
 </body>
+<script>
+    var div = document.querySelectorAll(".anketa-link");
+    var img = document.querySelectorAll(".ankete-images");
+    var img2 = document.querySelector("#ankete-specImage");
+    var specDiv = document.querySelector("#anketa-linkfirstInRow");
+
+    for (i = 0; i < div.length; i++) {
+        let img1 = i;
+        div[i].onmouseover = function() {
+            rotating(img1)
+        };
+    }
+
+    specDiv.onmouseover = function() {
+        rotating2()
+    };
+    specDiv.onmouseleave = function() {
+        derotating2()
+    };
+
+    for (i = 0; i < div.length; i++) {
+        div[i].onmouseleave = function() {
+            derotating()
+        };
+    }
+
+    function rotating(img1) {
+        img[img1].setAttribute('style', 'transform:rotate(45deg)');
+        img[img1].style.transition = "1s";
+    }
+
+    function derotating() {
+        for (i = 0; i < div.length; i++) {
+            img[i].setAttribute('style', 'transform:rotate(0deg)');
+            img[i].transition = "1s";
+        }
+    }
+
+    function rotating2() {
+        img2.setAttribute('style', 'transform:rotate(45deg)');
+        img2.style.transition = "1s";
+    }
+
+    function derotating2() {
+        img2.setAttribute('style', 'transform:rotate(0deg)');
+        img2.style.transition = "1s";
+    }
+</script>
 
 </html>
