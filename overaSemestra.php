@@ -19,7 +19,7 @@
         <a href="#Random"><img src="Images/icon1.png"> Random</a>
     </div>
     <div class="overaSemestra-odabirIspita">
-        <form action="overaSemestraPHP.php" method="post">
+        <form action="forms.php" method="post">
             <label class="container">One
                 <input type="checkbox" name="odabir[]" value="one" checked="checked">
                 <span class="checkmark"></span>
@@ -92,7 +92,7 @@
 
 
     function checkDate() {
-        if ((month == 6 || month == 1) && (dateC >= 1 && dateC <= 28)) {
+        if ((month == 5 || month == 1) && (dateC >= 1 && dateC <= 28)) {
             for (i = 0; i <divs.length; i++){
                 divs[i].style.display = "block";
             }
