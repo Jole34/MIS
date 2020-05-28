@@ -1,17 +1,21 @@
 /* ---- First in row (margin from sidebar)  ----*/
 #anketa-linkfirstInRow {
+    border-radius: 10%;
     background-color:  rgb(30, 90, 139);
     margin-left: 200px;
     width: 12%;
     display: inline-block;
+    color: rgb(157, 212, 174);
 
 }
 
 .anketa-link {
+    border-radius: 10%;
     background-color: rgb(30, 90, 139);
     margin-left: 5%;
     width: 12%;
     display: inline-block;
+    color: rgb(157, 212, 174);
 }
 
  #anketa-linkfirstInRow img {

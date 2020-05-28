@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <head>
+<meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="CSS/zajednicki.css">
     <link rel="stylesheet" type="text/css" href="CSS/ankete.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,6 +22,7 @@
     <div id="anketa-linkfirstInRow">
         <center>
             <img id="ankete-specImage" src="Images/ankete.png" />
+            <h3>Title</h3>
         </center>
     </div>
     <?php
@@ -30,6 +32,7 @@
         <div class="anketa-link">
             <center>
                 <img class="ankete-images" src="Images/ankete.png" />
+                <h3>Title</h3>
             </center>
         </div>
     <?php
