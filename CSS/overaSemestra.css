@@ -108,9 +108,16 @@ input[type=submit]:hover {
 }
 .overaSemestra-potpis{
     position: absolute;
-    left: 80%;
     margin-top: 3px;
     height: 70%;
     width: 8%;
+    left: 80%;
     display: inline;
 }
+.overaSemestra-potpis:hover {
+    opacity: .4;
+    transition: 1s;
+}
+
+
+
