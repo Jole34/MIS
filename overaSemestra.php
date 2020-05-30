@@ -29,7 +29,7 @@
                 <label class="container">One
                     <input type="checkbox" name="odabir[]" value="one" checked="checked">
                     <span class="checkmark"></span>
-                    <?php $boja = "rgb(60, 180, 60)"; ?>
+                    <?php $boja = "rgb(3, 82, 74, 0.700)"; ?>
                     <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
                 </label>
                 <label class="container">Two

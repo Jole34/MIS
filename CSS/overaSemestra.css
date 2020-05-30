@@ -78,14 +78,14 @@
 
 .overaSemestra-odabirIspita {
     font-weight: bolder;
-    color:rgb(3, 54, 97);
+    color: rgb(3, 54, 97);
     background-color: lightskyblue;
     border-radius: 5px;
     margin-left: 170px;
     display: none;
 }
 
-input[type=submit]{
+input[type=submit] {
     background-color: rgb(3, 54, 97);
     border: none;
     color: white;
@@ -99,25 +99,25 @@ input[type=submit]{
 
 input[type=submit]:hover {
     background-color: white;
-    color:  rgb(3, 54, 97);
+    color: rgb(3, 54, 97);
     transition: 1s;
 }
 
-.overaSemestra-odabirIspita1{
+.overaSemestra-odabirIspita1 {
     display: none;
 }
-.overaSemestra-potpis{
+
+.overaSemestra-potpis {
     position: absolute;
     margin-top: 3px;
     height: 70%;
     width: 8%;
     left: 80%;
     display: inline;
+    color: rgba(3, 82, 74, 0.664);
 }
+
 .overaSemestra-potpis:hover {
     opacity: .4;
     transition: 1s;
 }
-
-
-
