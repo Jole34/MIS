@@ -21,24 +21,31 @@
         <a href="#Random"><img src="Images/icon1.png"> Random</a>
     </div>
     <?php
+    #mesto pelje koja ide brojevima ice petlja kroz listu ispita foreach, provera
+    #da li je ispit potpisan na osnovu toga el ce imati boju diva za potpis
     for ($i = 0; $i < 3; $i++) { ?>
         <div class="overaSemestra-odabirIspita">
             <form action="forms.php" method="post">
                 <label class="container">One
                     <input type="checkbox" name="odabir[]" value="one" checked="checked">
                     <span class="checkmark"></span>
+                    <?php $boja = "rgb(50, 172, 50)"; ?>
+                    <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
                 </label>
                 <label class="container">Two
                     <input type="checkbox" value="two" name="odabir[]">
                     <span class="checkmark"></span>
+                    <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
                 </label>
                 <label class="container">Three
                     <input type="checkbox" value="three" name="odabir[]">
                     <span class="checkmark"></span>
+                    <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
                 </label>
                 <label class="container">Four
                     <input type="checkbox" value="four" name="odabir[]">
                     <span class="checkmark"></span>
+                    <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
                 </label>
         </div>
     <?php } ?>
@@ -61,7 +68,7 @@
 
 
     function checkDate() {
-        if ((month == 5 || month == 1) && (dateC >= 1 && dateC <= 28)) {
+        if ((month == 5 || month == 1) && (dateC >= 1 && dateC <= 31)) {
             for (i = 0; i < divs.length; i++) {
                 divs[i].style.display = "block";
             }

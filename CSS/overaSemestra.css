@@ -106,3 +106,11 @@ input[type=submit]:hover {
 .overaSemestra-odabirIspita1{
     display: none;
 }
+.overaSemestra-potpis{
+    position: absolute;
+    left: 80%;
+    margin-top: 3px;
+    height: 70%;
+    width: 8%;
+    display: inline;
+}
