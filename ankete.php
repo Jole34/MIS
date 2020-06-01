@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="CSS/zajednicki.css">
     <link rel="stylesheet" type="text/css" href="CSS/ankete.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,20 +19,31 @@
         <a href="#Random"><img src="Images/icon1.png"> Random</a>
         <a href="#Random"><img src="Images/icon1.png"> Random</a>
     </div>
-    <div id="anketa-linkfirstInRow">
-        <center>
-            <img id="ankete-specImage" src="Images/ankete.png" />
-            <h3>Title</h3>
-        </center>
-    </div>
+    <?php $stringPopunjena = "Анкета је уредно попуњена";
+    $stringNePopunjena = "Анкета још није попуњена";
+    $boja = "#3CB371";
+    #Ako je popunjena s1 ako ne s2 if itd
+    _ ?>
     <?php
 
-    for ($i = 0; $i < 4; $i++) {
+    for ($i = 0; $i < 5; $i++) {
     ?>
+
         <div class="anketa-link">
             <center>
+
                 <img class="ankete-images" src="Images/ankete.png" />
                 <h3>Title</h3>
+                <?php
+                if ($i % 2 != 0) {
+                    print $stringNePopunjena;
+                    $boja = "#3CB371";
+                } else {
+                    print $stringPopunjena;
+                    $boja = "white";
+                }
+                ?>
+                <div class="anketa-link-verifikacija" style="background-color: <?php echo $boja; ?>;"><img></div>
             </center>
         </div>
     <?php
@@ -45,8 +56,6 @@
 <script>
     var div = document.querySelectorAll(".anketa-link");
     var img = document.querySelectorAll(".ankete-images");
-    var img2 = document.querySelector("#ankete-specImage");
-    var specDiv = document.querySelector("#anketa-linkfirstInRow");
 
     for (i = 0; i < div.length; i++) {
         let img1 = i;
@@ -54,13 +63,6 @@
             rotating(img1)
         };
     }
-
-    specDiv.onmouseover = function() {
-        rotating2()
-    };
-    specDiv.onmouseleave = function() {
-        derotating2()
-    };
 
     for (i = 0; i < div.length; i++) {
         div[i].onmouseleave = function() {
@@ -78,16 +80,6 @@
             img[i].setAttribute('style', 'transform:rotate(0deg)');
             img[i].transition = "1s";
         }
-    }
-
-    function rotating2() {
-        img2.setAttribute('style', 'transform:rotate(45deg)');
-        img2.style.transition = "1s";
-    }
-
-    function derotating2() {
-        img2.setAttribute('style', 'transform:rotate(0deg)');
-        img2.style.transition = "1s";
     }
 </script>
 

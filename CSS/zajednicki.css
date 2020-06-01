@@ -1,60 +1,67 @@
-html{
-    background-color: #56baed;
+html {
+  background-color: #56baed;
+}
+
+body {
+  margin-left: 180px;
 }
 
 .sidebar {
-    height:100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: steelblue;
-    overflow-x: hidden;
-    padding-top: 16px;
-    display: block;
-  }
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: steelblue;
+  overflow-x: hidden;
+  padding-top: 16px;
+  display: block;
+}
 
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  color: ghostwhite;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  border-bottom: #56baed solid 0.7vh;
+  transition: background-color 1s;
+  margin-bottom: 1.5vh;
+}
+
+.sidebar a:hover {
+  color: #56baed;
+  background-color: white;
+  transition: color 1s;
+  transition: background-color 1s;
+}
+
+.main {
+  margin-left: 160px;
+  /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+.sidebar img {
+  width: 13%;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
   .sidebar a {
-    padding: 6px 8px 6px 16px;
-    color: ghostwhite;
-    text-decoration: none;
-    font-size: 20px;
-    display: block;
-    border-bottom: #56baed solid 0.7vh;
-    transition: background-color 1s;
-    margin-bottom: 1.5vh;
+    font-size: 18px;
   }
-  
-  .sidebar a:hover {
-    color: #56baed;
-    background-color: white;
-    transition: color 1s;
-    transition: background-color 1s;
-  
-  }
-  
-  .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    padding: 0px 10px;
-  }
-  .sidebar img{
-      width: 13%;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-  }
+}
 
-  .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 4%;
-    width: 100%;
-    background-color: black;
-    opacity: .7;
-  }
-
-  
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 4%;
+  width: 100%;
+  background-color: black;
+  opacity: .7;
+}
