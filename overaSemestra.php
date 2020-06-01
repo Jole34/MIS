@@ -26,7 +26,9 @@
     for ($i = 0; $i < 3; $i++) { ?>
         <div class="overaSemestra-odabirIspita">
             <form action="forms.php" method="post">
-                <label class="container">One <span>IT78</span>
+                <label class="container">One 
+                    <div style="display: inline-block;" class="overaSemestra-sifra">IT78</div>
+                <div style="display: inline-block;" class="overaSemestra-profesor">Prof M. Drago</div>
                     <input type="checkbox" name="odabir[]" value="one" checked="checked">
                     <span class="checkmark"></span>
                     <?php $boja = "rgb(30, 90, 139)"; ?>
