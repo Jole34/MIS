@@ -29,22 +29,25 @@
                 <label class="container">One <span>IT78</span>
                     <input type="checkbox" name="odabir[]" value="one" checked="checked">
                     <span class="checkmark"></span>
-                    <?php $boja = "rgb(3, 82, 74, 0.700)"; ?>
+                    <?php $boja = "rgb(30, 90, 139)"; ?>
                     <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
                 </label>
                 <label class="container">Two
                     <input type="checkbox" value="two" name="odabir[]">
                     <span class="checkmark"></span>
+                    <?php $boja = "white"; ?>
                     <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
                 </label>
                 <label class="container">Three
                     <input type="checkbox" value="three" name="odabir[]">
                     <span class="checkmark"></span>
+                    <?php $boja = "rgb(30, 90, 139)"; ?>
                     <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
                 </label>
                 <label class="container">Four
                     <input type="checkbox" value="four" name="odabir[]">
                     <span class="checkmark"></span>
+                    <?php $boja = "white"; ?>
                     <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
                 </label>
         </div>
