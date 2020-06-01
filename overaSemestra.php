@@ -26,7 +26,7 @@
     for ($i = 0; $i < 3; $i++) { ?>
         <div class="overaSemestra-odabirIspita">
             <form action="forms.php" method="post">
-                <label class="container">One
+                <label class="container">One <span>IT78</span>
                     <input type="checkbox" name="odabir[]" value="one" checked="checked">
                     <span class="checkmark"></span>
                     <?php $boja = "rgb(3, 82, 74, 0.700)"; ?>
@@ -66,9 +66,8 @@
     var dateC = date.getDate();
     var month = date.getMonth() + 1;
 
-
     function checkDate() {
-        if ((month == 5 || month == 1) && (dateC >= 1 && dateC <= 31)) {
+        if ((month == 6 || month == 1) && (dateC >= 1 && dateC <= 31)) {
             for (i = 0; i < divs.length; i++) {
                 divs[i].style.display = "block";
             }
