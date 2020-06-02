@@ -37,10 +37,10 @@
                 <?php
                 if ($i % 2 != 0) {
                     print $stringNePopunjena;
-                    $boja = "#3CB371";
+                    $boja = "white";
                 } else {
                     print $stringPopunjena;
-                    $boja = "white";
+                    $boja = "#00018";
                 }
                 ?>
                 <div class="anketa-link-verifikacija" style="background-color: <?php echo $boja; ?>;"><img></div>

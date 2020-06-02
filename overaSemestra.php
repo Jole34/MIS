@@ -31,7 +31,7 @@
                 <div style="display: inline-block;" class="overaSemestra-profesor">Prof M. Drago</div>
                     <input type="checkbox" name="odabir[]" value="one" checked="checked">
                     <span class="checkmark"></span>
-                    <?php $boja = "rgb(30, 90, 139)"; ?>
+                    <?php $boja = "orange"; ?>
                     <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
                 </label>
                 <label class="container">Two
@@ -43,7 +43,7 @@
                 <label class="container">Three
                     <input type="checkbox" value="three" name="odabir[]">
                     <span class="checkmark"></span>
-                    <?php $boja = "rgb(30, 90, 139)"; ?>
+                    <?php $boja = "orange"; ?>
                     <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
                 </label>
                 <label class="container">Four
