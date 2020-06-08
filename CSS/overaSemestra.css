@@ -6,6 +6,8 @@
     padding-right: 35px;
     margin-bottom: 12px;
     cursor: pointer;
+    border-bottom: 1px solid white;
+    
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -78,6 +80,8 @@
 
 .overaSemestra-odabirIspita {
     font-weight: bolder;
+    padding: 15px;
+    margin-bottom: 20px;
     color: rgb(3, 54, 97);
     background-color: rgb(30, 90, 139);
     /*background-color: rgba(206, 207, 144, 0.596);*/
@@ -97,13 +101,12 @@ input[type=submit] {
     margin: 4px 2px;
     margin-left: 45%;
     cursor: pointer;
-    transition: 1s;
+    transition: .4s;
 }
 
 input[type=submit]:hover {
     background-color: white;
     color: rgb(3, 54, 97);
-    transition: 1s;
 }
 
 .overaSemestra-odabirIspita1 {
