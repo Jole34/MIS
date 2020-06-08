@@ -7,8 +7,11 @@
     margin-bottom: 12px;
     cursor: pointer;
     border-bottom: 1px dotted white;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
     
+    
+
+
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -84,7 +87,7 @@
     padding: 15px;
     margin-bottom: 20px;
     color: rgb(3, 54, 97);
-    background-color: rgb(30, 90, 139);
+   background-color: rgb(30, 90, 139);
     /*background-color: rgba(206, 207, 144, 0.596);*/
     border-radius: 5px;
     display: none;
