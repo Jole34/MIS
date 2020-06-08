@@ -20,10 +20,6 @@
         <a href="#Random"><img src="Images/icon1.png"> Random</a>
         <a href="#Random"><img src="Images/icon1.png"> Random</a>
     </div>
-    <?php
-    #mesto pelje koja ide brojevima ice petlja kroz listu ispita foreach, provera
-    #da li je ispit potpisan na osnovu toga el ce imati boju diva za potpis
-    for ($i = 0; $i < 3; $i++) { ?>
         <div class="overaSemestra-odabirIspita">
             <form action="forms.php" method="post">
                 <label class="container">One 
@@ -53,7 +49,6 @@
                     <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
                 </label>
         </div>
-    <?php } ?>
     <div class="overaSemestra-odabirIspita1">
         <input type="submit" name="potvrda" value="Потврди">
     </div>
