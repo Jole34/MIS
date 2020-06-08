@@ -93,6 +93,13 @@ VALUES ('ИТ134','Увод у пајтон','Ass65','Dragan3','1');
 INSERT INTO Predmet (Sifra, Naziv, Asistent_KorisnickoIme, Profesor_KorisnickoIme, Semestar_idSemestar)
 VALUES ('ИТ135','Напредни пајтон','Ass65','Dragan3','');
 
+INSERT INTO Predmet (Sifra, Naziv, Asistent_KorisnickoIme, Profesor_KorisnickoIme, Semestar_idSemestar)
+VALUES ('ИТ135','Базе података 1','Ass65','Dragan3','3');
+
+
+INSERT INTO Predmet (Sifra, Naziv, Asistent_KorisnickoIme, Profesor_KorisnickoIme, Semestar_idSemestar)
+VALUES ('ИТ135','Структуре података 1','Ass65','Sale2','3');
+
 -----Ankete ----
 
 INSERT INTO Anketa (Naziv, PopunjenaAnketa, Semestar_idSemestar)
@@ -133,5 +140,12 @@ VALUES ('Jole552/17', 1);
 INSERT INTO SlusanjePredmeta (Student_KorisnickoIme, Predmet_idIspit)
 VALUES ('Jole552/17', 4);
 
+
+INSERT INTO SlusanjePredmeta (Student_KorisnickoIme, Predmet_idIspit)
+VALUES ('Jole552/17', 8);
+
+
+INSERT INTO SlusanjePredmeta (Student_KorisnickoIme, Predmet_idIspit)
+VALUES ('Jole552/17', 9);
 
 

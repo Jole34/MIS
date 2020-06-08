@@ -16,13 +16,15 @@ class DBUtils
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
     }
-    public function __destruct(){
+    public function __destruct()
+    {
         $this->connection = null;
     }
 
 
     #Predmeti
-    function getPredmeti(){
+    function getPredmeti()
+    {
         if (!$this->conn) return false;
         $predmeti = array();
 
@@ -36,13 +38,14 @@ class DBUtils
                 $profesor = $row["Profesor_KorisnickoIme"];
                 $semestar = $row["Semestar_idSemestar"];
             }
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
             return $predmeti;
         }
     }
 
     #Semestar
-    function getSemestri(){
+    function getSemestri()
+    {
         if (!$this->conn) return false;
         $semestri = array();
 
@@ -53,13 +56,14 @@ class DBUtils
                 $godina = $row["Godina"];
                 $naziv = $row["Naziv"];
             }
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
             return $semestri;
         }
     }
 
     #Student
-    function getStudenti(){
+    function getStudenti()
+    {
         if (!$this->conn) return false;
         $studenti = array();
 
@@ -75,16 +79,16 @@ class DBUtils
                 $jmbg = $row["JMBG"];
                 $email = $row["Email"];
                 $semestar = $row["Semestar_idSemestar"];
-
             }
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
             return $studenti;
         }
     }
 
 
     #Asistenti
-    function getAsistenti(){
+    function getAsistenti()
+    {
         if (!$this->conn) return false;
         $asistenti = array();
 
@@ -97,15 +101,15 @@ class DBUtils
                 $prezime = $row["Prezime"];
                 $lozinka = $row["Lozinka"];
                 $email = $row["Email"];
-  
             }
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
             return $asistenti;
         }
     }
 
-      #Profesori
-      function getProfesori(){
+    #Profesori
+    function getProfesori()
+    {
         if (!$this->conn) return false;
         $profesori = array();
 
@@ -118,16 +122,16 @@ class DBUtils
                 $prezime = $row["Prezime"];
                 $lozinka = $row["Lozinka"];
                 $email = $row["Email"];
-  
             }
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
             return $profesori;
         }
     }
-    
 
-      #Ankete
-      function getAnkete(){
+
+    #Ankete
+    function getAnkete()
+    {
         if (!$this->conn) return false;
         $ankete = array();
 
@@ -140,18 +144,16 @@ class DBUtils
                 $rez = $row["RezultatAnkete"];
                 $pop = $row["PopunjenaAnketa"];
                 $semestar = $row["Semestar_idSemestar"];
-  
             }
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
             return $ankete;
         }
-
-
     }
-    
+
 
     #Slusanje
-    function getSlusanje(){
+    function getSlusanje()
+    {
         if (!$this->conn) return false;
         $slusanje = array();
 
@@ -162,11 +164,9 @@ class DBUtils
                 $id = $row["idSlusanjePredmeta"];
                 $student = $row["Student_KorisnickoIme"];
                 $premdet = $row["Predmet_idIspit"];
-  
             }
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
             return $slusanje;
         }
     }
-    
 }
