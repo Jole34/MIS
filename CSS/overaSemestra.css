@@ -120,11 +120,10 @@ input[type=submit]:hover {
 
 .overaSemestra-potpis {
     position: absolute;
-    margin-top: 3px;
+    left: 80%;
+    display: inline-block;
     height: 73%;
     width: 8%;
-    left: 80%;
-    display: inline;
 }
 
 .overaSemestra-potpis:hover {
