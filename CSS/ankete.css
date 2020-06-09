@@ -1,5 +1,8 @@
 /* ---- First in row (margin from sidebar)  ----*/
 
+body{
+    margin-left: 240px;;
+}
 .anketa-link {
     font-size: 1.1vw;
     font-variant: initial;
@@ -7,7 +10,8 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 10%;
     background-color: rgb(30, 90, 139);
-    margin-right: 5%;
+    margin-right: 5.3%;
+    margin-top: 2px;
     width: 14%;
     display: inline-block;
     color: rgb(224, 247, 242);
@@ -25,5 +29,7 @@
 
 .anketa-link-verifikacija {
     width: 100%;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 
 }

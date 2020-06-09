@@ -16,14 +16,14 @@ $db = new DBUtils();
     <link rel="stylesheet" type="text/css" href="CSS/zajednicki.css">
     <link rel="stylesheet" type="text/css" href="CSS/overaSemestra.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Oвера испита</title>
+    <title>ПријаваИспита</title>
 </head>
 
 <body onload="checkDate()">
 
     <?php Pomoc::getMeni();
-        Pomoc::getHeader($_SESSION["ime"], $_SESSION["prezime"], $_SESSION["uloga"]);
-        Pomoc::getInfoSemestar();
+          Pomoc::getHeader($_SESSION["ime"], $_SESSION["prezime"], $_SESSION["uloga"]);
+          Pomoc::getInfoIspiti();
     ?>
     <?php
             $predmetiK = $db->getPredmetiZaStudenta($_SESSION["korisnicko"]);
@@ -35,13 +35,12 @@ $db = new DBUtils();
             $boja = "orange"; 
             echo  " <div class=\"overaSemestra-odabirIspita\">";
             foreach($predmeti as $p){
-                if ($p->getSemestarId() == 1) continue;
               ?>
         <form action="forms.php" method="post">
             <label class="container"><?php echo $p->getSifra();?>
                 <div style="display: inline-block;" class="overaSemestra-sifra"><?php echo $p->getNaziv();?></div>
                 <div style="display: inline-block;" class="overaSemestra-profesor"></div>
-                <input type="checkbox" name="odabir[]" value="one" checked>
+                <input type="checkbox" name="odabir[]" value="one">
                 <span class="checkmark"></span>
                 <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
             </label>
@@ -50,7 +49,7 @@ $db = new DBUtils();
         echo "</div>";
 ?>
     <div class="overaSemestra-odabirIspita1">
-        <input type="submit" name="potvrda" value="Потврди">
+        <input type="submit" name="potvrda" value="Потврди пријаву">
     </div>
     </form>
     <div class="footer">

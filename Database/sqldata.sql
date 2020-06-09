@@ -85,7 +85,7 @@ INSERT INTO Predmet (Sifra, Naziv, Asistent_KorisnickoIme, Profesor_KorisnickoIm
 VALUES ('ИТ123','Обрада и пренос сигнала','Css65','Sale2','1');
 
 INSERT INTO Predmet (Sifra, Naziv, Asistent_KorisnickoIme, Profesor_KorisnickoIme, Semestar_idSemestar)
-VALUES ('ИТ133','Социјалне мреже','Bss65','Nikoja','3');
+VALUES ('ИТ133','Социјалне мреже','Bss65','Dragan3','3');
 
 INSERT INTO Predmet (Sifra, Naziv, Asistent_KorisnickoIme, Profesor_KorisnickoIme, Semestar_idSemestar)
 VALUES ('ИТ134','Увод у пајтон','Ass65','Dragan3','1');
@@ -100,6 +100,11 @@ VALUES ('ИТ135','Базе података 1','Ass65','Dragan3','3');
 INSERT INTO Predmet (Sifra, Naziv, Asistent_KorisnickoIme, Profesor_KorisnickoIme, Semestar_idSemestar)
 VALUES ('ИТ135','Структуре података 1','Ass65','Sale2','3');
 
+
+INSERT INTO Predmet (Sifra, Naziv, Asistent_KorisnickoIme, Profesor_KorisnickoIme, Semestar_idSemestar)
+VALUES ('ИТ136','Семинарски рад А','Ass65','Nikoja','3');
+
+
 -----Ankete ----
 
 INSERT INTO Anketa (Naziv, PopunjenaAnketa, Semestar_idSemestar)
@@ -112,7 +117,7 @@ INSERT INTO Anketa (Naziv, PopunjenaAnketa, Semestar_idSemestar)
 VALUES ('Анкета за асистента', 1, 3);
 
 INSERT INTO Anketa (Naziv, PopunjenaAnketa, Semestar_idSemestar)
-VALUES ('Анкета за раднике', 1, 1);
+VALUES ('Анкета за раднике', 1, 3);
 
 INSERT INTO Anketa (Naziv, PopunjenaAnketa, Semestar_idSemestar)
 VALUES ('Анкета за професора', 1, 1);
@@ -125,6 +130,9 @@ VALUES ('Анкета за асистента', 1, 1);
 
 INSERT INTO Anketa (Naziv, PopunjenaAnketa, Semestar_idSemestar)
 VALUES ('Анкета за раднике', 1, 1);
+
+INSERT INTO Anketa (Naziv, PopunjenaAnketa, Semestar_idSemestar)
+VALUES ('Анкета за факултет', 1, 3);
 
 ---Slusa predmet----
 
@@ -148,4 +156,6 @@ VALUES ('Jole552/17', 8);
 INSERT INTO SlusanjePredmeta (Student_KorisnickoIme, Predmet_idIspit)
 VALUES ('Jole552/17', 9);
 
+INSERT INTO SlusanjePredmeta (Student_KorisnickoIme, Predmet_idIspit)
+VALUES ('Jole552/17', 10);
 
