@@ -211,3 +211,20 @@ td{
   color: rgb(29, 27, 27);
   border-radius: 4px;
 }
+.odap{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: lightgoldenrodyellow;
+  width: 15%;
+  margin-left: 20px;
+  padding: 2px;
+  border-radius: 5px;
+  color: #005b88;
+}
+
+.odabirProfesora{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-left: 20px;
+  padding: 2px;
+  background-color: lightgoldenrodyellow;
+  color: #005b88;
+}

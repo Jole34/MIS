@@ -21,9 +21,17 @@ $db = new DBUtils();
 
 <body onload="checkDate()">
 
+
     <?php Pomoc::getMeni();
     Pomoc::getHeader($_SESSION["ime"], $_SESSION["prezime"], $_SESSION["uloga"]);
+
+    
     ?>
+    <p class="odap">Одаберите професора: </p>
+    <select name="profesor" class="odabirProfesora">
+      <option>Драган Пешић</option>
+    
+    </select>
     <div class="formsA">
         <div class="anketa">
             <h4><span class="dot"></span>Да ли је професор редован на предавањима?</h4>
