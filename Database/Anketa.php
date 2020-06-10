@@ -50,5 +50,4 @@ class Anketa
     {
         return $this->semestar;
     }
-
 }

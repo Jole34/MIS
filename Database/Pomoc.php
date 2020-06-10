@@ -4,7 +4,6 @@ require_once("Predmet.php");
 class Pomoc
 {
 
-
     public static function getTable($korisnicko){
         $db = new DBUtils();
         $predmeti = $db->getPredmetiProf($korisnicko);
@@ -23,8 +22,6 @@ class Pomoc
         echo "</table>";
 
     }
-
-
 
     public static function getMeni()
     {
@@ -115,7 +112,7 @@ class Pomoc
     ?>
         <div class="info3">
             <h1>Претрага курсева</h1>
-           Приказ курсева које тренутно предајете на нашем факултету. Одабире курс, прегледајте студенте који слушају тај курс.
+           Приказ курсева које тренутно предајете на нашем факултету. Одаберите курс, прегледајте студенте који слушају тај курс.
            
         </div>
 <?php
