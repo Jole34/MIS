@@ -1,6 +1,6 @@
 <?php
 
-    class Predmet{
+    class Kurs{
         
             private $id;
             private $sifra;

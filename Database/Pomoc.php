@@ -1,6 +1,6 @@
 <?php
 require_once("DBUtils.php");
-require_once("Predmet.php");
+require_once("Kurs.php");
 class Pomoc
 {
 

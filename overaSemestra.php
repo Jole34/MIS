@@ -5,7 +5,7 @@ session_start();
 <?php
 require_once("Database/Pomoc.php");
 require_once("Database/DBUtils.php");
-require_once("Database/Predmet.php");
+require_once("Database/Kurs.php");
 $db = new DBUtils();
 
 ?>

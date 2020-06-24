@@ -1,6 +1,6 @@
 <?php
 
-require_once("Predmet.php");
+require_once("Kurs.php");
 require_once("Student.php");
 require_once("Asistent.php");
 require_once("Profesor.php");
@@ -45,7 +45,7 @@ class DBUtils
                 $asistent = $row["Asistent_KorisnickoIme"];
                 $profesor = $row["Profesor_KorisnickoIme"];
                 $semestar = $row["Semestar_idSemestar"];
-                $p = new Predmet($sifra, $naziv, $asistent, $profesor, $semestar);
+                $p = new Kurs($sifra, $naziv, $asistent, $profesor, $semestar);
                 $predmeti[] = $p;
             }
             return $predmeti;
@@ -68,7 +68,7 @@ class DBUtils
                 $asistent = $row["Asistent_KorisnickoIme"];
                 $profesor = $row["Profesor_KorisnickoIme"];
                 $semestar = $row["Semestar_idSemestar"];
-                $p = new Predmet($sifra, $naziv, $asistent, $profesor, $semestar, $row["idIspit"]);
+                $p = new Kurs($sifra, $naziv, $asistent, $profesor, $semestar, $row["idIspit"]);
                 $predmeti[] = $p;
             }
             return $predmeti;
@@ -135,7 +135,7 @@ class DBUtils
                 $asistent = $row["Asistent_KorisnickoIme"];
                 $profesor = $row["Profesor_KorisnickoIme"];
                 $semestar = $row["Semestar_idSemestar"];
-                $p = new Predmet($sifra, $naziv, $asistent, $profesor, $semestar);
+                $p = new Kurs($sifra, $naziv, $asistent, $profesor, $semestar);
                 return $p;
         } catch (PDOException $e) {
             return false;
@@ -158,7 +158,7 @@ class DBUtils
                 $asistent = $row["Asistent_KorisnickoIme"];
                 $profesor = $row["Profesor_KorisnickoIme"];
                 $semestar = $row["Semestar_idSemestar"];
-                $p = new Predmet($sifra, $naziv, $asistent, $profesor, $semestar);
+                $p = new Kurs($sifra, $naziv, $asistent, $profesor, $semestar);
                 return $p;
         } catch (PDOException $e) {
             return false;
