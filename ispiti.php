@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <?php
@@ -12,7 +12,6 @@ $db = new DBUtils();
 
 <head>
     <meta charset="UTF-8">
-
     <link rel="stylesheet" type="text/css" href="CSS/zajednicki.css">
     <link rel="stylesheet" type="text/css" href="CSS/overaSemestra.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,39 +21,121 @@ $db = new DBUtils();
 <body onload="checkDate()">
 
     <?php Pomoc::getMeni();
-          Pomoc::getHeader($_SESSION["ime"], $_SESSION["prezime"], $_SESSION["uloga"]);
-          Pomoc::getInfoIspiti();
+    Pomoc::getHeader($_SESSION["ime"], $_SESSION["prezime"], $_SESSION["uloga"]);
+
     ?>
     <?php
-            $predmetiK = $db->getPredmetiZaStudenta($_SESSION["korisnicko"]);
-            $predmeti = array();
-            for($i=0; $i<count($predmetiK); $i++){
-                $p = $db->getPredmetiKljuc($predmetiK[$i]);
-                $predmeti[] = $p;
-            }
-            $boja = "orange"; 
-            echo  " <div class=\"overaSemestra-odabirIspita\">";
-            foreach($predmeti as $p){
-              ?>
-        <form action="forms.php" method="post">
-            <label class="container"><?php echo $p->getSifra();?>
-                <div style="display: inline-block;" class="overaSemestra-sifra"><?php echo $p->getNaziv();?></div>
-                <div style="display: inline-block;" class="overaSemestra-profesor"></div>
-                <input type="checkbox" name="odabir[]" value="one">
-                <span class="checkmark"></span>
-                <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
-            </label>
-                <?php
+    $fp = fopen('pomocni.txt', 'r');
+    $number = fgets($fp);
+
+
+    $predmetiK = $db->getPredmetiZaStudenta($_SESSION["korisnicko"]);
+    $predmeti = array();
+    for ($i = 0; $i < count($predmetiK); $i++) {
+        $p = $db->getPredmetiKljuc($predmetiK[$i]);
+        $predmeti[] = $p;
+    }
+    $boja = "orange";
+
+    if (trim($number, "\n") == "0") {
+        Pomoc::getInfoIspiti();
+        echo  " <div class=\"overaSemestra-odabirIspita\">";
+        foreach ($predmeti as $p) {
+    ?>
+            <form action="forms.php" method="post">
+                <label class="container"><?php echo $p->getSifra(); ?>
+                    <div style="display: inline-block;" class="overaSemestra-sifra"><?php echo $p->getNaziv(); ?></div>
+                    <div style="display: inline-block;" class="overaSemestra-profesor"></div>
+                    <input type="checkbox"  name="odabir[]" value="<?php echo $p->getSifra(); ?>">
+                    <span class="checkmark"></span>
+                    <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
+                </label>
+            <?php
         }
         echo "</div>";
-?>
-    <div class="overaSemestra-odabirIspita1">
-        <input type="submit" name="potvrda" value="Потврди пријаву">
-    </div>
-    </form>
-    <div class="footer">
-        <p></p>
-    </div>
+        fclose($fp);
+            ?>
+
+            <div class="overaSemestra-odabirIspita1">
+                <input type="submit" name="potvrda" value="Потврди пријаву">
+            </div>
+            </form>
+            <?php
+        } else {
+            Pomoc::getInfoSemestarOveren();
+            $predmetiK2 = array();
+            while (!feof($fp)) {
+                $predmetiK2[] =  trim(fgets($fp), "\n");
+            }
+
+            fclose($fp);
+            $predmeti2 = array();
+            for ($i = 0; $i < count($predmetiK2); $i++) {
+                $p = $db->getPredmetiSifra($predmetiK2[$i]);
+                $predmeti2[] = $p;
+            }
+            $boja = "orange";
+
+            echo  " <div class=\"overaSemestra-odabirIspita\">";
+
+
+            foreach ($predmeti2 as $p) {
+            ?>
+                <form action="forms.php" method="post">
+                    <label class="container"><?php echo $p->getSifra(); ?>
+                        <div style="display: inline-block;" class="overaSemestra-sifra"><?php echo $p->getNaziv(); ?></div>
+                        <div style="display: inline-block;" class="overaSemestra-profesor"></div>
+                        <input type="checkbox" name="odabir[]" onclick ="return false" value="<?php echo $p->getSifra(); ?>" checked>
+                        <span class="checkmark"></span>
+                        <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
+                    </label>
+                    <?php
+                }
+                echo "</div>";
+                $br = count($predmeti);
+               
+                foreach ($predmeti as $p) {
+                    foreach ($predmeti2 as $p2) {
+                        if ($p->getSifra() == $p2->getSifra())
+                        $br--;
+                    }
+                }
+                
+                if ($br == 0) {
+
+                } else {
+                    echo  " <div class=\"overaSemestra-odabirIspita\">";
+                    foreach ($predmeti as $p) {
+                        foreach ($predmeti2 as $p2) {
+                            if ($p->getSifra() == $p2->getSifra()) continue 2;
+                        }
+                    ?>
+                        <form action="forms.php" method="post">
+                            <label class="container"><?php echo $p->getSifra(); ?>
+                                <div style="display: inline-block;" class="overaSemestra-sifra"><?php echo $p->getNaziv(); ?></div>
+                                <div style="display: inline-block;" class="overaSemestra-profesor"></div>
+                                <input type="checkbox" name="odabir[]" value="<?php echo $p->getSifra(); ?>">
+                                <span class="checkmark"></span>
+                                <div class="overaSemestra-potpis" style="background-color: <?php echo $boja; ?>;"><img></div>
+                            </label>
+                <?php
+                    }
+                
+    
+                    echo "</div>";
+
+                ?>
+                <div class="overaSemestra-odabirIspita1">
+                    <input type="submit" name="potvrda" value="Потврди пријаву">
+                </div>
+        <?php } 
+                }
+                ?>
+                        </form>
+
+                        <div class="footer">
+                            <p></p>
+                        </div>
 </body>
 <script>
     var date = new Date();

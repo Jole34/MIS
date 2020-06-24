@@ -90,11 +90,9 @@ VALUES ('ИТ133','Социјалне мреже','Bss65','Dragan3','3');
 INSERT INTO Predmet (Sifra, Naziv, Asistent_KorisnickoIme, Profesor_KorisnickoIme, Semestar_idSemestar)
 VALUES ('ИТ134','Увод у пајтон','Ass65','Dragan3','1');
 
-INSERT INTO Predmet (Sifra, Naziv, Asistent_KorisnickoIme, Profesor_KorisnickoIme, Semestar_idSemestar)
-VALUES ('ИТ135','Напредни пајтон','Ass65','Dragan3','');
 
 INSERT INTO Predmet (Sifra, Naziv, Asistent_KorisnickoIme, Profesor_KorisnickoIme, Semestar_idSemestar)
-VALUES ('ИТ135','Базе података 1','Ass65','Dragan3','3');
+VALUES ('ИТ137','Базе података 1','Ass65','Dragan3','3');
 
 
 INSERT INTO Predmet (Sifra, Naziv, Asistent_KorisnickoIme, Profesor_KorisnickoIme, Semestar_idSemestar)

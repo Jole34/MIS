@@ -4,6 +4,8 @@ require_once("Predmet.php");
 require_once("Student.php");
 require_once("Asistent.php");
 require_once("Profesor.php");
+require_once("Anketa.php");
+
 require_once("SlusanjePredmeta.php");
 class DBUtils
 {
@@ -139,6 +141,30 @@ class DBUtils
             return false;
         }
     }
+
+    function getPredmetiSifra($sifra)
+    {
+        if (!$this->conn) return false;
+
+        try {
+            settype($kljuc1, 'int');
+            $sql = "select * from Predmet where Sifra = :sifra;";
+            $result = $this->conn->prepare($sql);
+            $result->bindValue("sifra", $sifra);
+            $result->execute();
+            $row = $result->fetch();
+               $sifra = $row["Sifra"];
+                $naziv = $row["Naziv"];
+                $asistent = $row["Asistent_KorisnickoIme"];
+                $profesor = $row["Profesor_KorisnickoIme"];
+                $semestar = $row["Semestar_idSemestar"];
+                $p = new Predmet($sifra, $naziv, $asistent, $profesor, $semestar);
+                return $p;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
 
     #Semestar
     function getSemestri()
@@ -287,6 +313,32 @@ class DBUtils
         }
     }
 
+    function getAsistentKljuc($korisnicko)
+    {
+        if (!$this->conn) return false;
+
+        try {
+            $sql = "select * from Asistent where KorisnickoIme = :korisnicko;";
+            $result = $this->conn->prepare($sql);
+            $result->bindValue("korisnicko", $korisnicko);
+            $result->execute();
+           
+            $row = $result->fetch();
+            if ($row){
+                $korisnik = $row["KorisnickoIme"];
+                $ime = $row["Ime"];
+                $prezime = $row["Prezime"];
+                $lozinka = $row["Lozinka"];
+                $email = $row["Email"];
+            return new Asistent($korisnik, $ime, $prezime, $lozinka,$email);
+            }else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
 
     #Profesori
     function getProfesori()
@@ -334,6 +386,33 @@ class DBUtils
             return false;
         }
     }
+
+    function getProfesorKljuc($korisnicko)
+    {
+        if (!$this->conn) return false;
+
+        try {
+            $sql = "select * from Profesor where KorisnickoIme = :korisnicko;";
+            $result = $this->conn->prepare($sql);
+            $result->bindValue("korisnicko", $korisnicko);
+            $result->execute();
+           
+            $row = $result->fetch();
+            if ($row){
+                $korisnik = $row["KorisnickoIme"];
+                $ime = $row["Ime"];
+                $prezime = $row["Prezime"];
+                $lozinka = $row["Lozinka"];
+                $email = $row["Email"];
+                $profesor =  new Profesor($korisnik, $ime, $prezime, $lozinka,$email);
+            return $profesor;
+            }else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
     #Ankete
     function getAnkete()
     {
@@ -346,10 +425,10 @@ class DBUtils
             while ($row = $result->fetch()) {
                 $id = $row["idAnketa"];
                 $naziv = $row["Naziv"];
-                $rez = $row["RezultatAnkete"];
+                //$rez = $row["RezultatAnkete"];
                 $pop = $row["PopunjenaAnketa"];
                 $semestar = $row["Semestar_idSemestar"];
-                $ankete[]= new Anketa($id, $naziv, $rez, $pop, $semestar);
+                $ankete[]= new Anketa($id, $naziv, "", $pop, $semestar);
             }
             return $ankete;
         } catch (PDOException $e) {
@@ -357,6 +436,19 @@ class DBUtils
         }
     }
 
+    function updateAnketa($ime){
+        if (!$this->conn) return false;
+        try {
+            $br = 2;
+            $sql = "update Anketa set PopunjenaAnketa = :br where Naziv = :ime;";
+            $result = $this->conn->prepare($sql);
+            $result->bindValue("ime", $ime);
+            $result->bindValue("br", $br);
+            return $result->execute();
+        } catch (PDOException $e){
+            return false;
+        }
+    }
 
     #Slusanje
     function getSlusanje()

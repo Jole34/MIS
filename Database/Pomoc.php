@@ -4,28 +4,28 @@ require_once("Predmet.php");
 class Pomoc
 {
 
-    public static function getTable($korisnicko){
+    public static function getTable($korisnicko)
+    {
         $db = new DBUtils();
         $predmeti = $db->getPredmetiProf($korisnicko);
 
         echo "<table  class=\"predmeti\"><tr><th>Шифра</th><th>Назив</th><th>Студенти</th>";
-        foreach($predmeti as $p){
-            ?>
-             <tr>
+        foreach ($predmeti as $p) {
+?>
+            <tr>
                 <td><?php echo $p->getSifra(); ?></td>
-                <td><?php  echo $p->getNaziv(); ?></td>
-                <td><a href="<?php echo "pretraga.php?studenti=".$p->getId(); ?>"><button class="search">Тражи</button></a></td><br>
-             </tr>
-        
-        <?php 
+                <td><?php echo $p->getNaziv(); ?></td>
+                <td><a href="<?php echo "pretraga.php?studenti=" . $p->getId(); ?>"><button class="search">Тражи</button></a></td><br>
+            </tr>
+
+        <?php
         }
         echo "</table>";
-
     }
 
     public static function getMeni()
     {
-?>
+        ?>
         <div class="sidebar">
             <div id="pmfit"><img src="Images/pmf2.png" id="img2"></div>
             <a href="indexS.php"><img src="Images/icon1.png">Почетна</a>
@@ -39,7 +39,7 @@ class Pomoc
 
     public static function getMeniP()
     {
-?>
+    ?>
         <div class="sidebar">
             <div id="pmfit"><img src="Images/pmf2.png" id="img2"></div>
             <a href="indexP.php"><img src="Images/icon1.png">Почетна</a>
@@ -96,6 +96,25 @@ class Pomoc
         </div>
     <?php
     }
+    public static function getInfoSemestar2()
+    {
+    ?>
+        <div class="info3">
+            <h1>Овера семестра</h1>
+            Успешно сте оверили семестар.
+        </div>
+    <?php
+    }
+
+    public static function getInfoSemestarOveren()
+    {
+    ?>
+        <div class="info3">
+            <h1>Пријава испита</h1>
+            Пријавили сте испите који се налазе на овој страници. Уколико нисте пријавили све испите које можете, поред списка пријављених испита можете приајвити преостале испите које нисте.
+        </div>
+    <?php
+    }
 
     public static function getInfoIspiti()
     {
@@ -104,7 +123,7 @@ class Pomoc
             <h1>Пријава испита</h1>
             Уколико је пријава испита у току можете је извршити, подсећамо да је пријава на нашем факултету бесплатна.
         </div>
-<?php
+    <?php
     }
 
     public static function getInfoProfesor()
@@ -112,8 +131,8 @@ class Pomoc
     ?>
         <div class="info3">
             <h1>Претрага курсева</h1>
-           Приказ курсева које тренутно предајете на нашем факултету. Одаберите курс, прегледајте студенте који слушају тај курс.
-           
+            Приказ курсева које тренутно предајете на нашем факултету. Одаберите курс, прегледајте студенте који слушају тај курс.
+
         </div>
 <?php
     }

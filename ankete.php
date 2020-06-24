@@ -29,20 +29,37 @@ require_once("Database/Anketa.php");
     $db = new DBUtils();
     $niz = $db->getAnkete();
     $an = "abr";
+    
+    if (!isset($_SESSION["anketeP"])){
+        $_SESSION["anketeP"] = array();
+    }
+    
     for ($i = 0; $i <count($niz); $i++) {
         if ($niz[$i]->getSemestar() == 1 ) continue;
     ?>
+    <?php
+     $_SESSION["anketeP"][] = $niz[$i]->getPopunjena();
+          if ($niz[$i]->getPopunjena() == 1 ) {
+              ?>
+        <a href="abr0.php?<?php echo "anketa=".$niz[$i]->getNaziv(); ?>"><div class="anketa-link">
+         <?php }
+                else {
+            echo  "<a href=\"\"><div class=\"anketa-link\">";
+  
+                }
+         ?>
 
-        <a href="<?php echo $an.$i.".php"; ?>"><div class="anketa-link">
+
             <center>
 
                 <img class="ankete-images" src="Images/ankete.png" />
                 <h3><?php echo $niz[$i]->getNaziv();?></h3>
                 <?php
-                if ($i % 2 != 0) {
-                    print $stringNePopunjena;
-                    $boja = "white";
-                } else {
+                if ($niz[$i]->getPopunjena() == 1 ) {
+                 print $stringNePopunjena;
+                 $boja = "white";
+                }
+                 else {
                     print $stringPopunjena;
                     $boja = "#00018";
                 }
